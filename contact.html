@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact · Hauwa Bashir Muhammad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Serif+Display:ital@0;1&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} img{max-width:100%}</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Hauwa Bashir Muhammad, home"><span class="mono">hb<i>.</i></span><span class="full">Hauwa Bashir<br>Muhammad</span></a>
+    <nav aria-label="Site">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="publications.html">Research</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section class="page-intro">
+      <p class="eyebrow">Contact</p>
+      <h1>Let’s <em>talk.</em></h1>
+      <p class="lede">I’m happy to hear about teaching and research positions, postdoctoral projects, and communications work on women’s rights and health.</p>
+    </section>
+
+    <section class="contact-block" aria-labelledby="reach">
+      <p class="label" id="reach">Email</p>
+      <div class="contact">
+        <span class="email" id="email">jiddahbasheer01@gmail.com</span>
+        <button class="copy" type="button" id="copy-email">Copy email</button>
+      </div>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/hauwabashir-3b40b3164" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <span>Lefkoşa, North Cyprus</span>
+      </div>
+    </section>
+
+    <section class="now" aria-labelledby="now">
+      <p class="label">Now · November 2026</p>
+      <h2 id="now">What I’m doing and looking for</h2>
+      <ul>
+        <li>I have completed my PhD in Communication and Media Studies at Cyprus International University.</li>
+        <li>Two articles are under revision: one from my thesis on whose voices Nigerian newspapers carried during COVID-19, and one on AI and graduate readiness in journalism education.</li>
+        <li>I’m looking for an academic or postdoctoral position in health communication and gender, and for communications work on women’s rights.</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site"><div class="wrap"><span class="mono">hb<i>.</i></span><span><a href="contact.html">Get in touch ↗</a></span></div></footer>
+<script>
+  (function () {
+    var b = document.getElementById('copy-email');
+    if (!b) return;
+    b.addEventListener('click', function () {
+      var t = document.getElementById('email').textContent;
+      var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy email'; }, 1800); };
+      var fallback = function () {
+        var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        b.textContent = 'Selected, press copy';
+      };
+      try { navigator.clipboard.writeText(t).then(done, fallback); } catch (e) { fallback(); }
+    });
+  })();
+</script>
+</body>
+</html>
