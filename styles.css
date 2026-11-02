@@ -30,7 +30,7 @@
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 1.075rem; line-height: 1.75; font-weight: 400; }
 img { max-width: 100%; }
-.wrap { max-width: 72rem; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 88rem; margin: 0 auto; padding-left: max(clamp(20px, 3.5vw, 48px), env(safe-area-inset-left, 0px)); padding-right: max(clamp(20px, 3.5vw, 48px), env(safe-area-inset-right, 0px)); }
 .narrow { max-width: 50rem; }
 
 a { color: var(--ink); text-underline-offset: 4px; text-decoration-color: var(--accent); }
@@ -132,7 +132,7 @@ blockquote footer { font-family: var(--font-body); font-size: 0.72rem; letter-sp
 button.copy { font: inherit; font-size: 0.8rem; background: transparent; color: var(--btn-ink); border: 1px solid currentColor; border-radius: 2px; padding: 0.45rem 0.9rem; cursor: pointer; }
 
 /* Page intro (inner pages) */
-.page-intro { padding-top: 4rem; display: grid; gap: 1.4rem; max-width: 52rem; }
+.page-intro { padding-top: 4rem; display: grid; gap: 1.4rem; max-width: 60rem; }
 .page-intro h1 { font-size: clamp(2.6rem, 1.6rem + 4vw, 4.4rem); }
 
 /* Case studies */
