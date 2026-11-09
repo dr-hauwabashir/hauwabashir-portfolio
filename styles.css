@@ -215,3 +215,7 @@ footer.site a:hover { color: var(--accent); }
 .teaser .copy { align-content: center; }
 .teaser .portrait img { aspect-ratio: 4 / 5; }
 .contact-block a { color: var(--btn-ink); text-decoration-color: currentColor; }
+
+.duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; max-width: 46rem; margin-top: 1.4rem; }
+.duo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; }
+@media (max-width: 560px) { .duo { grid-template-columns: 1fr; } }
