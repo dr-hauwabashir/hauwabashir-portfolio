@@ -219,3 +219,34 @@ footer.site a:hover { color: var(--accent); }
 .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; max-width: 46rem; margin-top: 1.4rem; }
 .duo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; }
 @media (max-width: 560px) { .duo { grid-template-columns: 1fr; } }
+
+/* Motion. Everything here is switched off for visitors who prefer reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.28s; }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); transition-delay: var(--d, 0ms); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @keyframes settle { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: none; } }
+  .hero-text > *, .page-intro > * { animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .hero-text > :nth-child(2), .page-intro > :nth-child(2) { animation-delay: 0.12s; }
+  .hero-text > :nth-child(3), .page-intro > :nth-child(3) { animation-delay: 0.24s; }
+  .hero-text > :nth-child(n+4), .page-intro > :nth-child(n+4) { animation-delay: 0.36s; }
+  .hero .arch img, .hero .arch figcaption { animation: settle 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s both; }
+  .hero .badge { animation: settle 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.75s both; }
+
+  a, .btn { transition: color 0.2s ease, opacity 0.2s ease, border-color 0.2s ease; }
+  .btn span, .textlink span { display: inline-block; transition: transform 0.25s ease; }
+  .work a { transition: padding-left 0.3s ease; }
+  .work a::after { transition: transform 0.3s ease, color 0.3s ease; }
+  .gallery img, .masonry img, .duo img { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+  @media (hover: hover) {
+    .btn:hover span, .textlink:hover span { transform: translate(3px, -3px); }
+    .work a:hover { padding-left: 0.6rem; }
+    .work a:hover::after { transform: translate(3px, -3px); color: var(--accent); }
+    .gallery figure:hover img, .masonry figure:hover img, .duo figure:hover img { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12); }
+  }
+}
+@media print { .reveal { opacity: 1 !important; transform: none !important; } }
